@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test on <GifApp/> should render correctly 1`] = `
+<div>
+  <h1>
+    Gif App
+  </h1>
+  <form
+    aria-label="form"
+  >
+    <input
+      placeholder="Bucar Gifs"
+      type="text"
+      value="one punch"
+    />
+  </form>
+</div>
+`;

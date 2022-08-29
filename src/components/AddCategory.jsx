@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 export const AddCategory = ({ handleFunction }) => {
     const [inputValue, setInputValue] = useState("one punch");
@@ -7,13 +8,13 @@ export const AddCategory = ({ handleFunction }) => {
 
     const handleOnSubmit = (event) => {
         event.preventDefault();
-        if (inputValue.trim() < 1) return;
+        if (!inputValue.trim()) return;
         handleFunction(inputValue.trim());
         setInputValue("");
     };
 
     return (
-        <form onSubmit={handleOnSubmit}>
+        <form onSubmit={handleOnSubmit} aria-label="form">
             <input
                 type="text"
                 placeholder="Bucar Gifs"
@@ -22,4 +23,8 @@ export const AddCategory = ({ handleFunction }) => {
             />
         </form>
     );
+};
+
+AddCategory.propTypes = {
+    handleFunction: PropTypes.func.isRequired,
 };
